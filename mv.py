@@ -28,4 +28,4 @@ def first(segment):
 	return render_template(template, title=segment, dict=get_stuff(segment), station=segment, stations=stations)
 
 if __name__ == "__main__":
-	app.run(host='0.0.0.0', use_reloader=True)
+	app.run(host='0.0.0.0', port=80, use_reloader=True)
