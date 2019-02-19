@@ -1,0 +1,16 @@
+sudo: required
+services:
+- docker
+language: bash
+script:
+- docker run --rm --privileged multiarch/qemu-user-static:register --reset
+- export TAG=`if [[ $TRAVIS_PULL_REQUEST == "false" ]] && [[ $TRAVIS_BRANCH == "master"
+  ]]; then echo "latest"; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi`
+- export REPO=zepp/mvg-checker
+- docker build -t $REPO:$TAG .
+after_success:
+- docker login -u="$HUB_USER" -p="$HUB_PASS"
+- if [[ $TRAVIS_PULL_REQUEST == "false" ]] && [[ $TRAVIS_BRANCH == "master" ]]; then
+  docker tag $REPO:$TAG $REPO:$TRAVIS_BUILD_NUMBER; docker push $REPO:$TRAVIS_BUILD_NUMBER;
+  fi
+- docker push $REPO:$TAG
