@@ -1,0 +1,55 @@
+body {
+	font-family: sans-serif;
+	background: #fdfaf5;
+}
+.a {
+	font-family: Courier New;
+	font-size: 1.2em;
+	background-color: #555555;
+	padding: 15px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	transition-duration: 0.8s;
+}
+.buttons {
+	background-color: #1f5165;
+	color: #fff;
+	border: 2px solid #555555;
+}
+.buttons:hover {
+	background-color: #f2b340;
+	color: #fff;
+}
+.bus {
+	background-color: #f2b340;
+	color: #fff;
+	text-align: center;
+}
+.ubahn {
+	background-color: #1f5165;
+	color: #fff;
+	text-align: center;
+}
+.sbahn {
+	background-color: #7a322e;
+	color: #fff;
+	text-align: center;
+}
+.tram {
+	background-color: #356a40;
+	color: #fff;
+	text-align: center;
+}
+td {
+	color: #000;
+	margin: 0;
+	background: #eeebe6;
+}
+h1 {
+	color: #000;
+	border-bottom: 2px solid #eee;
+	font-size: 1.0em;
+	font-family: sans-serif;
+	margin: 5;
+}

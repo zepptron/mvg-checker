@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+	<title>{{ title }}</title>
+</head>
+<body>
+{% for station in stations %}
+	<a href={{ station }} class="a buttons">{{ station }}</a>
+{% endfor %}
+
+<h1>Departure from {{ station }}</h1>
+<table width=700px>
+	{% for item in dict %}
+		{% if dict[item].departure >= 5 and dict[item].departure <= 60 %}
+	<tr>
+		<td {% if dict[item].product == "UBAHN" %}class="ubahn"{% elif dict[item].product == "BUS"%}class="bus"{% elif dict[item].product == "SBAHN"%}class="sbahn"{% elif dict[item].product == "TRAM"%}class="tram"{% endif %}>
+			{{ dict[item].label }}
+		</td>
+		<td>{{ dict[item].destination }}
+		</td>
+		<td>
+			in {{ dict[item].departure }} Minuten
+		</td>
+	</tr>
+		{% endif %}
+	{% endfor %}
+</table>
+<br>
+<table>
+	<tr>
+		<td width=100px>Legende:</td>
+		<td class="ubahn" width=125px>U-Bahn</td>
+		<td class="bus" width=125px>Bus</td>
+		<td class="sbahn" width=125px>S-Bahn</td>
+		<td class="tram" width=125px>Tram</td>
+	</tr>
+</table>
+</body>
+</html>
