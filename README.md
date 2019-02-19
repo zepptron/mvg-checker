@@ -1,18 +1,15 @@
-# The allmighty MVG Checker
-
-build it:
-```
-docker build -t mvg .
-```
+# The allmighty MVG Checker for RaspberryPi
 
 run it:
 ```
-docker run -p 80:5000 -dt -e MVG_CHECKER='[marienplatz", "karlsplatz"]' mvg
+docker run -p 80:5000 -dt -e MVG_CHECKER='[marienplatz", "karlsplatz"]' zepp/mvg-checker:latest
 ```
 
 and check the webinterfaces:
 http://127.0.0.1/marienplatz
 http://127.0.0.1/karlsplatz
+
+If you got the 7 Inch Display (or any other) connected to your RaspberryPi you can have a fancy Display in your room :-)
 
 # How it works
 
