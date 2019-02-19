@@ -2,7 +2,7 @@
 
 run it:
 ```
-docker run -p 80:5000 -dt -e MVG_CHECKER='[marienplatz", "karlsplatz"]' zepp/mvg-checker:latest
+docker run -p 80:5000 -dt -e MVG_CHECKER='["marienplatz", "karlsplatz"]' zepp/mvg-checker:latest
 ```
 
 and check the webinterfaces:
