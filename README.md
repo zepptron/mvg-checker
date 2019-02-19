@@ -1,15 +1,23 @@
-# The allmighty MVG Checker for RaspberryPi
+# The allmighty MVG Checker
 
 ![screenshot](https://raw.githubusercontent.com/zepptron/mvg-checker/master/tmp/screen.png)
 
 run it:
 ```
-docker run -dt -e MVG_CHECKER='["marienplatz", "karlsplatz"]' zepp/mvg-checker:latest
+docker run -dt -e MVG_CHECKER='["marienplatz", "karlsplatz"]' zepp/mvg-checker:x64_latest
 ```
 
 and check the webinterfaces:
 http://127.0.0.1/marienplatz
 http://127.0.0.1/karlsplatz
+
+# ARM build
+
+There is also a build available for the ARM architecture:
+
+```
+docker run -dt -e MVG_CHECKER='["marienplatz", "karlsplatz"]' zepp/mvg-checker:latest
+```
 
 If you got the 7 Inch Display (or any other) connected to your RaspberryPi you can have a fancy Display in your room :-)
 
@@ -61,7 +69,7 @@ sed -i 's/"exit_type":"Crashed"/"exit_type":"Normal"/' /home/pi/.config/chromium
 
 /usr/bin/chromium-browser --noerrdialogs --disable-infobars --kiosk http://127.0.0.1/prinzregentenplatz &
 
-# autoreload
+# autoreload (optional)
 while true; do
     xdotool keydown ctrl+r; xdotool keyup ctrl+r;
     sleep 60
