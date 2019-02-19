@@ -1,5 +1,7 @@
 # The allmighty MVG Checker for RaspberryPi
 
+![screenshot](https://raw.githubusercontent.com/zepptron/mvg-checker/master/tmp/screen.png)
+
 run it:
 ```
 docker run -dt -e MVG_CHECKER='["marienplatz", "karlsplatz"]' zepp/mvg-checker:latest
