@@ -1,4 +1,4 @@
-FROM hypriot/rpi-alpine
+FROM alpine:latest
 
 # Update
 RUN apk add --update python py-pip
@@ -9,7 +9,7 @@ COPY mv.py /mv.py
 COPY requirements.txt /requirements.txt
 # Install app dependencies
 RUN pip install -r /requirements.txt
-ENV MVG_CHECKER '["marienplatz", "karlsplatz"]'
+ENV MVG_CHECKER '["prinzregentenplatz", "karlsplatz", "marienplatz"]'
 
 EXPOSE  5000
 CMD ["python", "/mv.py"]
