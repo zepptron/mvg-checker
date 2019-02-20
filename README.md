@@ -1,6 +1,6 @@
 # The allmighty MVG Checker
 
-![screenshot](https://raw.githubusercontent.com/zepptron/mvg-checker/master/tmp/screen.png)
+<img src="https://raw.githubusercontent.com/zepptron/mvg-checker/master/tmp/screen.png" width="500">
 
 run it:
 ```
