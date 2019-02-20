@@ -16,7 +16,7 @@ http://127.0.0.1/karlsplatz
 There is also a build available for the ARM architecture:
 
 ```
-docker run -dt -e MVG_CHECKER='["marienplatz", "karlsplatz"]' zepp/mvg-checker:latest
+docker run -dt -e MVG_CHECKER='["marienplatz", "karlsplatz"]' zepp/mvg-checker:arm_latest
 ```
 
 If you got the 7 Inch Display (or any other) connected to your RaspberryPi you can have a fancy Display in your room :-)
@@ -59,8 +59,8 @@ create `/home/pi/kiosk.sh` with the following content:
 # cleanup docker and start container
 /usr/bin/docker rm --name mvgchecker
 /usr/bin/docker container rm $(/usr/bin/docker container ls -aq)
-/usr/bin/docker rmi zepp/mvg-checker:latest
-/usr/bin/docker run -dt --name mvgchecker -p 80:80 -e MVG_CHECKER='["prinzregentenplatz", "marienplatz", "karlsplatz"]' zepp/mvg-checker:latest
+/usr/bin/docker rmi zepp/mvg-checker:arm_latest
+/usr/bin/docker run -dt --name mvgchecker -p 80:80 -e MVG_CHECKER='["prinzregentenplatz", "marienplatz", "karlsplatz"]' zepp/mvg-checker:arm_latest
 
 # no warnings etc in chromium
 unclutter -idle 0.5 -root &

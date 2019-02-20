@@ -4,8 +4,8 @@ services:
 language: bash
 script:
 - docker run --rm --privileged multiarch/qemu-user-static:register --reset
-- export TAG=`if [[ $TRAVIS_PULL_REQUEST == "false" ]] && [[ $TRAVIS_BRANCH == "master"
-  ]]; then echo "latest"; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi`
+- export TAG=`if [[ $TRAVIS_PULL_REQUEST == "false" ]] && [[ $TRAVIS_BRANCH == "master" ]]; then
+  echo "arm_latest"; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi`
 - export REPO=zepp/mvg-checker
 - docker build -t $REPO:$TAG .
 after_success:
