@@ -3,15 +3,19 @@
 <head>
 	<meta charset="utf-8">
 	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-	<script language="javascript" type="text/javascript">
-		setTimeout(function(){
-		  location = ''
-		},20000)
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(
+			function() {
+					setInterval(function() {
+							$("#content").load(location.href+" #content>*","");
+					}, 30000);
+			}
+		);
 	</script>
 	<title>{{ title }}</title>
 </head>
 <body>
-
 <div id="content">
 	{% for station in stations %}
 	<a href={{ station }} class="a buttons">{{ station | capitalize }}</a>
