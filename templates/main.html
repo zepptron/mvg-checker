@@ -21,7 +21,7 @@
 	<a href={{ station }} class="a buttons">{{ station | capitalize }}</a>
 	{% endfor %}
 
-	<h1>Departures from {{ station | capitalize }}</h1>
+	<h1>Departures from {{ station | capitalize }} - {{ timestamp }}</h1>
 	<table width=700px>
 		{% for item in dict %}
 			{% if dict[item].departure >= 3 and dict[item].departure <= 60 %}

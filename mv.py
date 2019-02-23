@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from flask import Flask, render_template
+import datetime
 import mvg_api
 import os
 import json
@@ -34,6 +35,7 @@ def first(segment):
 		template,
 		title=segment,
 		dict=get_stuff(segment),
+		timestamp=datetime.datetime.now().strftime("%H:%M:%S"),
 		station=segment,
 		stations=stations
 	)
